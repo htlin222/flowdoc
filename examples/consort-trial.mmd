@@ -1,0 +1,31 @@
+flowchart TB
+  classDef exclusion fill:#fafafa,stroke:#666,color:#1a1a1a;
+  classDef included fill:#eaf1ff,stroke:#333,color:#1a1a1a,font-weight:bold;
+  subgraph enrolment["Enrolment"]
+    assessed["Assessed for eligibility<br/>(n = 612)"]
+    excluded["Excluded (n = 198)<br/>• Not meeting inclusion criteria (n<br/>= 142)<br/>• Declined to participate (n = 41)<br/>• Other reasons (n = 15)"]
+    randomized["Randomized<br/>(n = 414)"]
+  end
+  subgraph allocation["Allocation"]
+    allocated_int["Allocated to Probiotic (n = 207)<br/>• Received allocated intervention<br/>(n = 199)<br/>• Did not receive allocated<br/>intervention (n = 8)"]
+    allocated_ctrl["Allocated to Placebo (n = 207)<br/>• Received allocated intervention<br/>(n = 204)<br/>• Did not receive allocated<br/>intervention (n = 3)"]
+  end
+  subgraph followup["Follow-up"]
+    followup_int["Lost to follow-up (n = 6)<br/>Discontinued intervention (n = 4)"]
+    followup_ctrl["Lost to follow-up (n = 5)<br/>Discontinued intervention (n = 2)"]
+  end
+  subgraph analysis["Analysis"]
+    analysed_int["Analysed (n = 197)<br/>Excluded from analysis (n = 10)"]
+    analysed_ctrl["Analysed (n = 200)<br/>Excluded from analysis (n = 7)"]
+  end
+  assessed --> excluded
+  assessed --> randomized
+  randomized --> allocated_int
+  randomized --> allocated_ctrl
+  allocated_int --> followup_int
+  allocated_ctrl --> followup_ctrl
+  followup_int --> analysed_int
+  followup_ctrl --> analysed_ctrl
+  class excluded exclusion;
+  class followup_int exclusion;
+  class followup_ctrl exclusion;

@@ -1,0 +1,42 @@
+$schema: https://flowdoc.dev/schema/v1
+preset: consort-2010
+metadata:
+  title: "PROBE-RCT: Probiotics vs placebo for antibiotic-associated diarrhoea"
+  authors:
+    - "Lin W"
+    - "Chen Y"
+  doi: "10.0000/example.2026.002"
+  date: "2026-04-25"
+  language: en
+data:
+  # Enrolment
+  assessed: 612
+  excluded_total: 198
+  excluded_not_meeting: 142
+  excluded_declined: 41
+  excluded_other: 15
+  randomized: 414
+
+  # Intervention arm — 207
+  int_name: "Probiotic"
+  int_allocated: 207
+  int_received: 199
+  int_not_received: 8
+
+  # Control arm — 207
+  ctrl_name: "Placebo"
+  ctrl_allocated: 207
+  ctrl_received: 204
+  ctrl_not_received: 3
+
+  # Follow-up
+  int_lost: 6
+  int_discontinued: 4
+  ctrl_lost: 5
+  ctrl_discontinued: 2
+
+  # Analysis
+  int_analysed: 197
+  int_excluded_analysis: 10
+  ctrl_analysed: 200
+  ctrl_excluded_analysis: 7

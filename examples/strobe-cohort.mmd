@@ -1,0 +1,34 @@
+flowchart TB
+  classDef exclusion fill:#fafafa,stroke:#666,color:#1a1a1a;
+  classDef included fill:#eaf1ff,stroke:#333,color:#1a1a1a,font-weight:bold;
+  subgraph source["Source"]
+    source["Source population<br/>(n = 18420)"]
+  end
+  subgraph eligibility["Eligibility"]
+    excluded_eligibility["Excluded (n = 4630)<br/>• Did not meet inclusion criteria (n =<br/>4250)<br/>• Other (n = 380)"]
+    eligible["Eligible<br/>(n = 13790)"]
+  end
+  subgraph enrolment["Enrolment"]
+    excluded_consent["Not enrolled (n = 2590)<br/>• Declined to participate (n = 2110)<br/>• Could not be consented (n = 480)"]
+    enrolled["Enrolled<br/>(n = 11200)"]
+  end
+  subgraph followup["Follow-up"]
+    lost["Did not complete follow-up (n = 800)<br/>• Lost to follow-up (n = 612)<br/>• Withdrew (n = 188)"]
+    completed["Completed follow-up<br/>(n = 10400)"]
+  end
+  subgraph analysis["Analysis"]
+    excluded_analysis["Excluded from analysis<br/>(n = 220)"]
+    analysed["Included in analysis<br/>(n = 10180)"]
+  end
+  source --> excluded_eligibility
+  source --> eligible
+  eligible --> excluded_consent
+  eligible --> enrolled
+  enrolled --> completed
+  enrolled --> lost
+  completed --> analysed
+  completed --> excluded_analysis
+  class excluded_eligibility exclusion;
+  class excluded_consent exclusion;
+  class lost exclusion;
+  class excluded_analysis exclusion;

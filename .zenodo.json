@@ -1,0 +1,36 @@
+{
+  "title": "FlowDoc: Deterministic flow diagrams for reporting guidelines",
+  "description": "A preset-driven TypeScript engine for producing publication-quality flow diagrams (PRISMA 2020, CONSORT 2010, STROBE; MOOSE/ARRIVE planned) from YAML/JSON/CSV input, exporting SVG, drawio XML, Mermaid, PDF, and PNG. Designed as a 2026-stack alternative to the R/Shiny PRISMA2020 package, with byte-deterministic output and zero runtime dependencies.",
+  "license": "MIT",
+  "upload_type": "software",
+  "keywords": [
+    "PRISMA",
+    "PRISMA 2020",
+    "CONSORT",
+    "CONSORT 2010",
+    "STROBE",
+    "systematic review",
+    "meta-analysis",
+    "randomised controlled trial",
+    "observational study",
+    "reporting guideline",
+    "flow diagram",
+    "reproducible research",
+    "TypeScript",
+    "SVG"
+  ],
+  "creators": [
+    {
+      "name": "Lin, Hsieh-Ting",
+      "orcid": "0009-0002-3974-4528"
+    }
+  ],
+  "related_identifiers": [
+    { "identifier": "10.1136/bmj.n71",                "relation": "isCompiledBy", "scheme": "doi" },
+    { "identifier": "10.1136/bmj.c332",               "relation": "isCompiledBy", "scheme": "doi" },
+    { "identifier": "10.1016/S0140-6736(07)61602-X",  "relation": "isCompiledBy", "scheme": "doi" }
+  ],
+  "communities": [
+    { "identifier": "open-science" }
+  ]
+}

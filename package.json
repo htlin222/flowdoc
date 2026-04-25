@@ -1,0 +1,51 @@
+{
+  "name": "flowdoc",
+  "version": "0.1.0",
+  "description": "Deterministic, preset-driven flow diagrams for reporting guidelines (PRISMA 2020, CONSORT, STROBE, …)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "flowdoc": "bin/flowdoc.mjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "CITATION.cff"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "test": "node --test --experimental-test-module-mocks dist/../test/*.test.mjs",
+    "prepare-examples": "npm run build && node bin/flowdoc.mjs render examples/prisma-review.yaml -o examples/prisma-review.svg && node bin/flowdoc.mjs export examples/prisma-review.yaml --format drawio -o examples/prisma-review.drawio && node bin/flowdoc.mjs export examples/prisma-review.yaml --format mermaid -o examples/prisma-review.mmd",
+    "demo": "npm run build && npm run prepare-examples && npm test"
+  },
+  "keywords": [
+    "prisma",
+    "consort",
+    "strobe",
+    "systematic-review",
+    "meta-analysis",
+    "flow-diagram",
+    "reporting-guideline",
+    "svg",
+    "drawio",
+    "mermaid"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,72 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "FlowDoc: Deterministic flow diagrams for reporting guidelines"
+version: "0.1.0"
+date-released: "2026-04-25"
+url: "https://github.com/htlin222/flowdoc"
+repository-code: "https://github.com/htlin222/flowdoc"
+license: MIT
+abstract: >-
+  A preset-driven TypeScript engine for producing publication-quality flow
+  diagrams (PRISMA 2020, CONSORT 2010, STROBE; MOOSE / ARRIVE planned) from
+  YAML, JSON, or CSV input, exporting SVG, drawio, Mermaid, PDF, and PNG
+  with byte-deterministic output and zero runtime dependencies.
+authors:
+  - family-names: "Lin"
+    given-names: "Hsieh-Ting"
+    orcid: "https://orcid.org/0009-0002-3974-4528"
+keywords:
+  - PRISMA
+  - CONSORT
+  - STROBE
+  - systematic review
+  - meta-analysis
+  - reporting guideline
+  - flow diagram
+  - reproducible research
+  - TypeScript
+references:
+  - type: article
+    title: "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews"
+    authors:
+      - family-names: Page
+        given-names: Matthew J
+      - family-names: McKenzie
+        given-names: Joanne E
+      - family-names: Bossuyt
+        given-names: Patrick M
+    journal: BMJ
+    year: 2021
+    volume: 372
+    start: n71
+    doi: 10.1136/bmj.n71
+  - type: article
+    title: "CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials"
+    authors:
+      - family-names: Schulz
+        given-names: Kenneth F
+      - family-names: Altman
+        given-names: Douglas G
+      - family-names: Moher
+        given-names: David
+    journal: BMJ
+    year: 2010
+    volume: 340
+    start: c332
+    doi: 10.1136/bmj.c332
+  - type: article
+    title: "The Strengthening the Reporting of Observational studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies"
+    authors:
+      - family-names: "von Elm"
+        given-names: Erik
+      - family-names: Altman
+        given-names: Douglas G
+      - family-names: Egger
+        given-names: Matthias
+    journal: Lancet
+    year: 2007
+    volume: 370
+    start: 1453
+    end: 1457
+    doi: 10.1016/S0140-6736(07)61602-X

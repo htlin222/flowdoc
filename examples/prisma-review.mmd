@@ -1,0 +1,43 @@
+flowchart TB
+  classDef exclusion fill:#fafafa,stroke:#666,color:#1a1a1a;
+  classDef included fill:#eaf1ff,stroke:#333,color:#1a1a1a,font-weight:bold;
+  subgraph identification["Identification"]
+    db_sources["Records identified from:<br/>Databases (n = 1240)<br/>Registers (n = 82)"]
+    prescreen_removed["Records removed before screening:<br/>Duplicate records (n = 312)<br/>Records marked as ineligible by<br/>automation tools (n = 45)<br/>Records removed for other reasons<br/>(n = 0)"]
+    other_sources["Records identified from:<br/>Websites (n = 15)<br/>Organisations (n = 4)<br/>Citation searching (n = 8)"]
+  end
+  subgraph screening["Screening"]
+    records_screened["Records screened<br/>(n = 965)"]
+    records_excluded["Records excluded<br/>(n = 702)"]
+    reports_sought["Reports sought for retrieval<br/>(n = 263)"]
+    reports_not_retrieved["Reports not retrieved<br/>(n = 12)"]
+    reports_other_sought["Reports sought for retrieval<br/>(n = 27)"]
+    reports_assessed["Reports assessed for eligibility<br/>(n = 251)"]
+    reports_other_not_retrieved["Reports not retrieved<br/>(n = 3)"]
+    reports_excluded["Reports excluded:<br/>Wrong population (n = 48)<br/>Wrong intervention (n = 41)<br/>Wrong outcome (n = 36)<br/>Wrong study design (n = 29)<br/>Conference abstract only (n = 12)"]
+    reports_other_assessed["Reports assessed for eligibility<br/>(n = 24)"]
+    reports_other_excluded["Reports excluded (other methods):<br/>Wrong population (n = 7)<br/>Duplicate of included study (n = 4)"]
+  end
+  subgraph included["Included"]
+    included["Studies included in review (n = 89)<br/>Reports of included studies (n = 98)"]
+  end
+  db_sources --> records_screened
+  records_screened --> reports_sought
+  reports_sought --> reports_assessed
+  reports_assessed --> included
+  db_sources --> prescreen_removed
+  records_screened --> records_excluded
+  reports_sought --> reports_not_retrieved
+  reports_assessed --> reports_excluded
+  other_sources --> reports_other_sought
+  reports_other_sought --> reports_other_assessed
+  reports_other_sought --> reports_other_not_retrieved
+  reports_other_assessed --> reports_other_excluded
+  reports_other_assessed --> included
+  class prescreen_removed exclusion;
+  class records_excluded exclusion;
+  class reports_not_retrieved exclusion;
+  class reports_other_not_retrieved exclusion;
+  class reports_excluded exclusion;
+  class reports_other_excluded exclusion;
+  class included included;

@@ -1,0 +1,26 @@
+$schema: https://flowdoc.dev/schema/v1
+preset: strobe
+metadata:
+  title: "Air pollution and incident asthma in adults: a prospective cohort"
+  authors:
+    - "Wang H"
+    - "Lin W"
+  doi: "10.0000/example.2026.003"
+  date: "2026-04-25"
+  language: en
+data:
+  source_population: 18420
+  excluded_ineligible: 4250
+  excluded_other_eligibility: 380
+  eligible: 13790
+
+  declined: 2110
+  no_consent: 480
+  enrolled: 11200
+
+  lost_followup: 612
+  withdrew: 188
+  completed_followup: 10400
+
+  excluded_analysis: 220
+  analysed: 10180

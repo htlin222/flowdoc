@@ -1,0 +1,53 @@
+$schema: https://flowdoc.dev/schema/v1
+preset: prisma-2020
+metadata:
+  title: "Effect of probiotic supplementation on antibiotic-associated diarrhoea: a systematic review"
+  authors:
+    - "Lin W"
+    - "Chen Y"
+    - "Wang H"
+  doi: "10.0000/example.2026.001"
+  date: "2026-04-25"
+  language: en
+data:
+  # Identification — databases & registers
+  db_records: 1240
+  registry_records: 82
+
+  # Pre-screen removal
+  duplicates_removed: 312
+  automation_excluded: 45
+  other_prescreen_removed: 0
+
+  # Identification — other methods
+  websites_records: 15
+  organisations_records: 4
+  citation_records: 8
+
+  # Screening
+  records_screened: 965
+  records_excluded: 702
+
+  reports_sought: 263
+  reports_not_retrieved: 12
+
+  reports_other_sought: 27
+  reports_other_not_retrieved: 3
+
+  reports_assessed: 251
+  reports_other_assessed: 24
+
+  exclusion_reasons:
+    - { reason: "Wrong population", n: 48 }
+    - { reason: "Wrong intervention", n: 41 }
+    - { reason: "Wrong outcome", n: 36 }
+    - { reason: "Wrong study design", n: 29 }
+    - { reason: "Conference abstract only", n: 12 }
+
+  exclusion_reasons_other:
+    - { reason: "Wrong population", n: 7 }
+    - { reason: "Duplicate of included study", n: 4 }
+
+  # Included
+  studies_included: 89
+  reports_of_included_studies: 98
