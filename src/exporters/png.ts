@@ -224,27 +224,60 @@ function drawText(
   }
 }
 
-function fontScale(svgFontSize: number): number {
-  // SVG fontSize ~12px → bitmap scale 2 (gives 10×14 px glyphs).
-  // SVG fontSize ~9px (watermark) → scale 1.
-  if (svgFontSize <= 10) return 1;
-  return 2;
+function fontScale(_svgFontSize: number): number {
+  // The 5x7 GLCD glyph has a ~0.5-em advance (5 col + 1 col gap = 6 / 12 ≈ 0.5)
+  // which is just under Helvetica's 0.56 em used by the layout's pre-wrap.
+  // At scale=1 the bitmap text fits inside every box the layout reserved;
+  // bumping to scale=2 doubles the advance and pushes labels outside their
+  // boxes. Trade-off: text is small (7 px tall) but always legible and never
+  // overflows. SVG / PDF remain the high-fidelity outputs.
+  return 1;
 }
 
 /* -------------------------- diagram drawing -------------------------- */
 
 function drawSection(fb: Uint8Array, W: number, H: number, s: LaidOutSection): void {
   fillRect(fb, W, H, s.x, s.y, s.width, s.height, SECTION_FILL);
-  // Section label, drawn vertically (one char per row) near the centre of
-  // the strip, in deep slate. Approximation of the SVG's rotated label.
-  const fontSize = 13;
-  const scale = fontScale(fontSize);
-  const cx = Math.round(s.x + s.width / 2 - (GLYPH_WIDTH * scale) / 2);
-  const totalH = s.label.length * (GLYPH_HEIGHT * scale + scale);
-  let y = Math.round(s.y + s.height / 2 - totalH / 2);
-  for (const ch of s.label) {
-    drawText(fb, W, H, ch, cx, y, SECTION_LABEL, scale, false);
-    y += GLYPH_HEIGHT * scale + scale;
+  // Section label rotated -90° around the centre of the strip — matches
+  // the SVG/PDF outputs (text reads bottom-to-top, first char at bottom).
+  const scale = fontScale(13);
+  const cx = s.x + s.width / 2;
+  const cy = s.y + s.height / 2;
+  drawTextRotated(fb, W, H, s.label, cx, cy, SECTION_LABEL, scale);
+}
+
+/**
+ * Render `text` rotated -90° (counterclockwise on screen) around (cx, cy).
+ *
+ * SVG `transform="rotate(-90, cx, cy)"` makes left-to-right horizontal text
+ * read bottom-to-top vertically, with the first character at the bottom.
+ * We replicate that here so PNG section labels match SVG/PDF.
+ */
+function drawTextRotated(
+  fb: Uint8Array, W: number, H: number,
+  text: string, cx: number, cy: number,
+  c: RGB, scale: number,
+): void {
+  if (!text) return;
+  const advance = (GLYPH_WIDTH + 1) * scale;
+  const glyphHeight = GLYPH_HEIGHT * scale;
+  const totalLen = text.length * advance - scale; // last glyph has no trailing gap
+
+  for (let i = 0; i < text.length; i++) {
+    const g = glyphFor(text[i]!);
+    for (let col = 0; col < GLYPH_WIDTH; col++) {
+      const colByte = g[col]!;
+      for (let row = 0; row < GLYPH_HEIGHT; row++) {
+        if (((colByte >> row) & 1) === 0) continue;
+        // Pixel offset from rotated-string centre, in pre-rotation coords.
+        const ox = i * advance + col * scale - totalLen / 2;
+        const oy = row * scale - glyphHeight / 2;
+        // SVG -90° rotation in screen coords: (ox, oy) → (oy, -ox).
+        const sx = cx + oy;
+        const sy = cy - ox;
+        fillRect(fb, W, H, sx, sy, scale, scale, c);
+      }
+    }
   }
 }
 
