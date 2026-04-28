@@ -1,7 +1,7 @@
 {
   "name": "flowdoc",
   "version": "0.1.0",
-  "description": "Deterministic, preset-driven flow diagrams for reporting guidelines (PRISMA 2020, CONSORT, STROBE, …)",
+  "description": "Deterministic, preset-driven flow diagrams for reporting guidelines (PRISMA 2020, CONSORT 2010, STROBE) — outputs SVG / drawio / Mermaid / PDF / PNG with zero runtime deps.",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,28 +15,51 @@
     "examples",
     "README.md",
     "LICENSE",
-    "CITATION.cff"
+    "CITATION.cff",
+    "citation.bib"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsc -p tsconfig.json --watch",
     "test": "node --test --experimental-test-module-mocks dist/../test/*.test.mjs",
     "prepare-examples": "npm run build && node bin/flowdoc.mjs render examples/prisma-review.yaml -o examples/prisma-review.svg && node bin/flowdoc.mjs export examples/prisma-review.yaml --format drawio -o examples/prisma-review.drawio && node bin/flowdoc.mjs export examples/prisma-review.yaml --format mermaid -o examples/prisma-review.mmd",
-    "demo": "npm run build && npm run prepare-examples && npm test"
+    "demo": "npm run build && npm run prepare-examples && npm test",
+    "prepublishOnly": "npm run build && npm test"
   },
   "keywords": [
     "prisma",
+    "prisma-2020",
     "consort",
+    "consort-2010",
     "strobe",
     "systematic-review",
     "meta-analysis",
+    "randomised-controlled-trial",
+    "rct",
+    "observational-study",
     "flow-diagram",
     "reporting-guideline",
     "svg",
+    "pdf",
+    "png",
     "drawio",
-    "mermaid"
+    "mermaid",
+    "reproducible-research",
+    "deterministic"
   ],
+  "author": {
+    "name": "Hsieh-Ting Lin",
+    "url": "https://orcid.org/0009-0002-3974-4528"
+  },
   "license": "MIT",
+  "homepage": "https://github.com/htlin222/flowdoc#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/htlin222/flowdoc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/htlin222/flowdoc/issues"
+  },
   "engines": {
     "node": ">=18"
   },
