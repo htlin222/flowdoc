@@ -1,6 +1,6 @@
 {
   "name": "@htlin222/flowdoc",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Deterministic, preset-driven flow diagrams for reporting guidelines (PRISMA 2020, CONSORT 2010, STROBE) — outputs SVG / drawio / Mermaid / PDF / PNG with zero runtime deps.",
   "type": "module",
   "main": "dist/index.js",

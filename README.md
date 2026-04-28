@@ -1,6 +1,6 @@
 <!-- Project & licence -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-FFD93D.svg?logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-1E90FF.svg)](https://github.com/htlin222/flowdoc/releases)
+[![Version](https://img.shields.io/badge/version-0.1.1-1E90FF.svg)](https://github.com/htlin222/flowdoc/releases)
 [![Status: Active](https://img.shields.io/badge/status-active-2EA44F.svg)](#status)
 [![Maintained](https://img.shields.io/badge/maintained-yes-32CD32.svg)](#)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-FF69B4.svg?logo=git&logoColor=white)](https://github.com/htlin222/flowdoc/pulls)
@@ -228,7 +228,7 @@ Three layers:
 
 Suggested Methods sentence:
 
-> Flow diagrams were generated with FlowDoc v0.1.0 (DOI: 10.5281/zenodo.XXXXX) following the PRISMA 2020 statement (Page et al., 2021, DOI: 10.1136/bmj.n71).
+> Flow diagrams were generated with FlowDoc v0.1.1 (DOI: 10.5281/zenodo.XXXXX) following the PRISMA 2020 statement (Page et al., 2021, DOI: 10.1136/bmj.n71).
 
 ## Adding a new preset
 
@@ -256,7 +256,7 @@ If you use FlowDoc in your work, please cite it:
   title   = {{FlowDoc}: Deterministic flow diagrams for reporting guidelines},
   year    = {2026},
   url     = {https://github.com/htlin222/flowdoc},
-  version = {0.1.0},
+  version = {0.1.1},
   license = {MIT}
 }
 ```
@@ -264,14 +264,14 @@ If you use FlowDoc in your work, please cite it:
 <details>
 <summary>AMA format</summary>
 
-Lin H-T. *FlowDoc: Deterministic flow diagrams for reporting guidelines*. Version 0.1.0. Published online 2026. https://github.com/htlin222/flowdoc
+Lin H-T. *FlowDoc: Deterministic flow diagrams for reporting guidelines*. Version 0.1.1. Published online 2026. https://github.com/htlin222/flowdoc
 
 </details>
 
 <details>
 <summary>APA format</summary>
 
-Lin, H.-T. (2026). *FlowDoc: Deterministic flow diagrams for reporting guidelines* (Version 0.1.0) [Computer software]. https://github.com/htlin222/flowdoc
+Lin, H.-T. (2026). *FlowDoc: Deterministic flow diagrams for reporting guidelines* (Version 0.1.1) [Computer software]. https://github.com/htlin222/flowdoc
 
 </details>
 
