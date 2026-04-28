@@ -28,7 +28,7 @@ export const consort2010: Preset = {
 
   grid: {
     cols: 3,
-    rows: 6,
+    rows: 5,
     colWidth: 260,
     rowHeight: 80,
     colGap: 40,
@@ -38,10 +38,10 @@ export const consort2010: Preset = {
   },
 
   sections: [
-    { id: "enrolment", label: "Enrolment", rows: [0, 2] },
-    { id: "allocation", label: "Allocation", rows: [3, 3] },
-    { id: "followup", label: "Follow-up", rows: [4, 4] },
-    { id: "analysis", label: "Analysis", rows: [5, 5] },
+    { id: "enrolment", label: "Enrolment", rows: [0, 1] },
+    { id: "allocation", label: "Allocation", rows: [2, 2] },
+    { id: "followup", label: "Follow-up", rows: [3, 3] },
+    { id: "analysis", label: "Analysis", rows: [4, 4] },
   ],
 
   fields: [
@@ -84,7 +84,7 @@ export const consort2010: Preset = {
     {
       id: "excluded",
       kind: "exclusion",
-      cell: { row: 1, col: 2 },
+      cell: { row: 0, col: 2 },
       template:
         "Excluded (n = {{excluded_total}})\n" +
         "• Not meeting inclusion criteria (n = {{excluded_not_meeting}})\n" +
@@ -94,7 +94,7 @@ export const consort2010: Preset = {
     {
       id: "randomized",
       kind: "box",
-      cell: { row: 2, col: 1 },
+      cell: { row: 1, col: 1 },
       template: "Randomized\n(n = {{randomized}})",
       style: { bold: true },
     },
@@ -102,7 +102,7 @@ export const consort2010: Preset = {
     {
       id: "allocated_int",
       kind: "box",
-      cell: { row: 3, col: 0 },
+      cell: { row: 2, col: 0 },
       template:
         "Allocated to {{int_name}} (n = {{int_allocated}})\n" +
         "• Received allocated intervention (n = {{int_received}})\n" +
@@ -111,7 +111,7 @@ export const consort2010: Preset = {
     {
       id: "allocated_ctrl",
       kind: "box",
-      cell: { row: 3, col: 2 },
+      cell: { row: 2, col: 2 },
       template:
         "Allocated to {{ctrl_name}} (n = {{ctrl_allocated}})\n" +
         "• Received allocated intervention (n = {{ctrl_received}})\n" +
@@ -121,7 +121,7 @@ export const consort2010: Preset = {
     {
       id: "followup_int",
       kind: "exclusion",
-      cell: { row: 4, col: 0 },
+      cell: { row: 3, col: 0 },
       template:
         "Lost to follow-up (n = {{int_lost}})\n" +
         "Discontinued intervention (n = {{int_discontinued}})",
@@ -129,7 +129,7 @@ export const consort2010: Preset = {
     {
       id: "followup_ctrl",
       kind: "exclusion",
-      cell: { row: 4, col: 2 },
+      cell: { row: 3, col: 2 },
       template:
         "Lost to follow-up (n = {{ctrl_lost}})\n" +
         "Discontinued intervention (n = {{ctrl_discontinued}})",
@@ -138,7 +138,7 @@ export const consort2010: Preset = {
     {
       id: "analysed_int",
       kind: "box",
-      cell: { row: 5, col: 0 },
+      cell: { row: 4, col: 0 },
       template:
         "Analysed (n = {{int_analysed}})\n" +
         "Excluded from analysis (n = {{int_excluded_analysis}})",
@@ -147,7 +147,7 @@ export const consort2010: Preset = {
     {
       id: "analysed_ctrl",
       kind: "box",
-      cell: { row: 5, col: 2 },
+      cell: { row: 4, col: 2 },
       template:
         "Analysed (n = {{ctrl_analysed}})\n" +
         "Excluded from analysis (n = {{ctrl_excluded_analysis}})",

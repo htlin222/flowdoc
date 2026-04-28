@@ -31,9 +31,9 @@ export const strobe: Preset = {
 
   grid: {
     cols: 2,
-    rows: 7,
+    rows: 5,
     colWidth: 280,
-    rowHeight: 70,
+    rowHeight: 80,
     colGap: 40,
     rowGap: 18,
     padding: 24,
@@ -42,10 +42,10 @@ export const strobe: Preset = {
 
   sections: [
     { id: "source", label: "Source", rows: [0, 0] },
-    { id: "eligibility", label: "Eligibility", rows: [1, 2] },
-    { id: "enrolment", label: "Enrolment", rows: [3, 4] },
-    { id: "followup", label: "Follow-up", rows: [5, 5] },
-    { id: "analysis", label: "Analysis", rows: [6, 6] },
+    { id: "eligibility", label: "Eligibility", rows: [1, 1] },
+    { id: "enrolment", label: "Enrolment", rows: [2, 2] },
+    { id: "followup", label: "Follow-up", rows: [3, 3] },
+    { id: "analysis", label: "Analysis", rows: [4, 4] },
   ],
 
   fields: [
@@ -77,7 +77,7 @@ export const strobe: Preset = {
     {
       id: "excluded_eligibility",
       kind: "exclusion",
-      cell: { row: 1, col: 1 },
+      cell: { row: 0, col: 1 },
       template:
         "Excluded (n = {{ sum excluded_ineligible excluded_other_eligibility }})\n" +
         "• Did not meet inclusion criteria (n = {{excluded_ineligible}})\n" +
@@ -86,13 +86,13 @@ export const strobe: Preset = {
     {
       id: "eligible",
       kind: "box",
-      cell: { row: 2, col: 0 },
+      cell: { row: 1, col: 0 },
       template: "Eligible\n(n = {{eligible}})",
     },
     {
       id: "excluded_consent",
       kind: "exclusion",
-      cell: { row: 3, col: 1 },
+      cell: { row: 1, col: 1 },
       template:
         "Not enrolled (n = {{ sum declined no_consent }})\n" +
         "• Declined to participate (n = {{declined}})\n" +
@@ -101,14 +101,14 @@ export const strobe: Preset = {
     {
       id: "enrolled",
       kind: "box",
-      cell: { row: 4, col: 0 },
+      cell: { row: 2, col: 0 },
       template: "Enrolled\n(n = {{enrolled}})",
       style: { bold: true },
     },
     {
       id: "lost",
       kind: "exclusion",
-      cell: { row: 5, col: 1 },
+      cell: { row: 2, col: 1 },
       template:
         "Did not complete follow-up (n = {{ sum lost_followup withdrew }})\n" +
         "• Lost to follow-up (n = {{lost_followup}})\n" +
@@ -117,20 +117,20 @@ export const strobe: Preset = {
     {
       id: "completed",
       kind: "box",
-      cell: { row: 5, col: 0 },
+      cell: { row: 3, col: 0 },
       template: "Completed follow-up\n(n = {{completed_followup}})",
     },
     {
       id: "excluded_analysis",
       kind: "exclusion",
-      cell: { row: 6, col: 1 },
+      cell: { row: 3, col: 1 },
       template:
         "Excluded from analysis\n(n = {{excluded_analysis}})",
     },
     {
       id: "analysed",
       kind: "box",
-      cell: { row: 6, col: 0 },
+      cell: { row: 4, col: 0 },
       template: "Included in analysis\n(n = {{analysed}})",
       style: { fill: "#eaf1ff", bold: true },
     },
@@ -141,10 +141,10 @@ export const strobe: Preset = {
     { from: "source", to: "eligible", fromPort: "s", toPort: "n" },
     { from: "eligible", to: "excluded_consent", fromPort: "e", toPort: "w" },
     { from: "eligible", to: "enrolled", fromPort: "s", toPort: "n" },
-    { from: "enrolled", to: "completed", fromPort: "s", toPort: "n" },
     { from: "enrolled", to: "lost", fromPort: "e", toPort: "w" },
-    { from: "completed", to: "analysed", fromPort: "s", toPort: "n" },
+    { from: "enrolled", to: "completed", fromPort: "s", toPort: "n" },
     { from: "completed", to: "excluded_analysis", fromPort: "e", toPort: "w" },
+    { from: "completed", to: "analysed", fromPort: "s", toPort: "n" },
   ],
 
   invariants: [
