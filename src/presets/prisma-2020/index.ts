@@ -23,7 +23,7 @@ export const prisma2020: Preset = {
 
   grid: {
     cols: 3,
-    rows: 9,
+    rows: 7,
     colWidth: 260,
     rowHeight: 70,
     colGap: 40,
@@ -34,8 +34,8 @@ export const prisma2020: Preset = {
 
   sections: [
     { id: "identification", label: "Identification", rows: [0, 1] },
-    { id: "screening", label: "Screening", rows: [2, 6] },
-    { id: "included", label: "Included", rows: [7, 7] },
+    { id: "screening", label: "Screening", rows: [2, 5] },
+    { id: "included", label: "Included", rows: [6, 6] },
   ],
 
   fields: [
@@ -139,12 +139,21 @@ export const prisma2020: Preset = {
       template: "Reports sought for retrieval\n(n = {{reports_other_sought}})",
     },
 
-    // Row 4: Assessed
+    // Row 4: Assessed for eligibility — left-track exclusion lives on the
+    // same row so the side branch is a direct horizontal arrow.
     {
       id: "reports_assessed",
       kind: "box",
       cell: { row: 4, col: 0 },
       template: "Reports assessed for eligibility\n(n = {{reports_assessed}})",
+    },
+    {
+      id: "reports_excluded",
+      kind: "exclusion",
+      cell: { row: 4, col: 1 },
+      template:
+        "Reports excluded:\n" +
+        "{{#each exclusion_reasons}}{{reason}} (n = {{n}})\n{{/each}}",
     },
     {
       id: "reports_other_not_retrieved",
@@ -153,14 +162,15 @@ export const prisma2020: Preset = {
       template: "Reports not retrieved\n(n = {{reports_other_not_retrieved}})",
     },
 
-    // Row 5: Excluded with reasons
+    // Row 5: Right-track assessed-for-eligibility with its exclusion
+    // box folded into col 1 so the right→centre side branch is also
+    // a direct horizontal arrow.
     {
-      id: "reports_excluded",
+      id: "reports_other_excluded",
       kind: "exclusion",
       cell: { row: 5, col: 1 },
       template:
-        "Reports excluded:\n" +
-        "{{#each exclusion_reasons}}{{reason}} (n = {{n}})\n{{/each}}",
+        "{{#if exclusion_reasons_other}}Reports excluded (other methods):\n{{#each exclusion_reasons_other}}{{reason}} (n = {{n}})\n{{/each}}{{/if}}",
     },
     {
       id: "reports_other_assessed",
@@ -169,20 +179,11 @@ export const prisma2020: Preset = {
       template: "Reports assessed for eligibility\n(n = {{reports_other_assessed}})",
     },
 
-    // Row 6: Right-track exclusions
-    {
-      id: "reports_other_excluded",
-      kind: "exclusion",
-      cell: { row: 6, col: 1 },
-      template:
-        "{{#if exclusion_reasons_other}}Reports excluded (other methods):\n{{#each exclusion_reasons_other}}{{reason}} (n = {{n}})\n{{/each}}{{/if}}",
-    },
-
-    // Row 7: Included
+    // Row 6: Included
     {
       id: "included",
       kind: "box",
-      cell: { row: 7, col: 0, colSpan: 3 },
+      cell: { row: 6, col: 0, colSpan: 3 },
       template:
         "Studies included in review (n = {{studies_included}})\n" +
         "Reports of included studies (n = {{reports_of_included_studies}})",
@@ -208,7 +209,9 @@ export const prisma2020: Preset = {
     { from: "other_sources", to: "reports_other_sought", fromPort: "s", toPort: "n" },
     { from: "reports_other_sought", to: "reports_other_assessed", fromPort: "s", toPort: "n" },
     { from: "reports_other_sought", to: "reports_other_not_retrieved", fromPort: "s", toPort: "n" },
-    { from: "reports_other_assessed", to: "reports_other_excluded", fromPort: "s", toPort: "n" },
+    // Right-track exclusion now lives on the same row as
+    // reports_other_assessed; the side branch heads left into col 1.
+    { from: "reports_other_assessed", to: "reports_other_excluded", fromPort: "w", toPort: "e" },
     // Merge right → included.
     { from: "reports_other_assessed", to: "included", fromPort: "s", toPort: "n" },
   ],
