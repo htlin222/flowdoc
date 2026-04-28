@@ -3,7 +3,15 @@ message: "If you use this software, please cite it as below."
 type: software
 title: "FlowDoc: Deterministic flow diagrams for reporting guidelines"
 version: "0.1.1"
-date-released: "2026-04-25"
+date-released: "2026-04-28"
+doi: "10.5281/zenodo.19858609"
+identifiers:
+  - description: "Concept DOI (always resolves to the latest archived version)."
+    type: doi
+    value: "10.5281/zenodo.19858609"
+  - description: "Version DOI for FlowDoc v0.1.1."
+    type: doi
+    value: "10.5281/zenodo.19858610"
 url: "https://github.com/htlin222/flowdoc"
 repository-code: "https://github.com/htlin222/flowdoc"
 license: MIT

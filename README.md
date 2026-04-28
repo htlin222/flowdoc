@@ -38,7 +38,7 @@
 [![CSV](https://img.shields.io/badge/input-CSV-217346.svg?logo=microsoftexcel&logoColor=white)](examples/prisma-review.csv)
 
 <!-- Citation / scholarship -->
-[![DOI](https://img.shields.io/badge/DOI-Zenodo%20pending-3E7BBC.svg?logo=zenodo&logoColor=white)](https://zenodo.org)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19858609.svg)](https://doi.org/10.5281/zenodo.19858609)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0002--3974--4528-A6CE39.svg?logo=orcid&logoColor=white)](https://orcid.org/0009-0002-3974-4528)
 [![CITATION.cff](https://img.shields.io/badge/CITATION.cff-ready-F4A261.svg)](CITATION.cff)
 [![BibTeX](https://img.shields.io/badge/cite-BibTeX-DA4F4A.svg?logo=latex&logoColor=white)](citation.bib)
@@ -228,7 +228,7 @@ Three layers:
 
 Suggested Methods sentence:
 
-> Flow diagrams were generated with FlowDoc v0.1.1 (DOI: 10.5281/zenodo.XXXXX) following the PRISMA 2020 statement (Page et al., 2021, DOI: 10.1136/bmj.n71).
+> Flow diagrams were generated with FlowDoc v0.1.1 (DOI: [10.5281/zenodo.19858610](https://doi.org/10.5281/zenodo.19858610); concept DOI: [10.5281/zenodo.19858609](https://doi.org/10.5281/zenodo.19858609)) following the PRISMA 2020 statement (Page et al., 2021, DOI: [10.1136/bmj.n71](https://doi.org/10.1136/bmj.n71)).
 
 ## Adding a new preset
 
@@ -257,6 +257,7 @@ If you use FlowDoc in your work, please cite it:
   year    = {2026},
   url     = {https://github.com/htlin222/flowdoc},
   version = {0.1.1},
+  doi     = {10.5281/zenodo.19858609},
   license = {MIT}
 }
 ```
@@ -264,14 +265,14 @@ If you use FlowDoc in your work, please cite it:
 <details>
 <summary>AMA format</summary>
 
-Lin H-T. *FlowDoc: Deterministic flow diagrams for reporting guidelines*. Version 0.1.1. Published online 2026. https://github.com/htlin222/flowdoc
+Lin H-T. *FlowDoc: Deterministic flow diagrams for reporting guidelines*. Version 0.1.1. Zenodo; 2026. doi:[10.5281/zenodo.19858609](https://doi.org/10.5281/zenodo.19858609)
 
 </details>
 
 <details>
 <summary>APA format</summary>
 
-Lin, H.-T. (2026). *FlowDoc: Deterministic flow diagrams for reporting guidelines* (Version 0.1.1) [Computer software]. https://github.com/htlin222/flowdoc
+Lin, H.-T. (2026). *FlowDoc: Deterministic flow diagrams for reporting guidelines* (Version 0.1.1) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.19858609
 
 </details>
 
