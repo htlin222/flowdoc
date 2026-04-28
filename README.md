@@ -1,7 +1,62 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+<!-- Project & licence -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-FFD93D.svg?logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1.0-1E90FF.svg)](https://github.com/htlin222/flowdoc/releases)
+[![Status: Active](https://img.shields.io/badge/status-active-2EA44F.svg)](#status)
+[![Maintained](https://img.shields.io/badge/maintained-yes-32CD32.svg)](#)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-FF69B4.svg?logo=git&logoColor=white)](https://github.com/htlin222/flowdoc/pulls)
+
+<!-- Tech stack -->
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC.svg?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Node](https://img.shields.io/badge/node-%3E%3D18-339933.svg?logo=nodedotjs&logoColor=white)](https://nodejs.org)
-[![GitHub stars](https://img.shields.io/github/stars/htlin222/flowdoc)](https://github.com/htlin222/flowdoc/stargazers)
+[![Node](https://img.shields.io/badge/Node-%3E%3D18-339933.svg?logo=nodedotjs&logoColor=white)](https://nodejs.org)
+[![ESM](https://img.shields.io/badge/module-ESM-F7DF1E.svg?logo=javascript&logoColor=black)](#install)
+[![Zero deps](https://img.shields.io/badge/runtime%20deps-0-2EA44F.svg?logo=npm&logoColor=white)](package.json)
+[![strict](https://img.shields.io/badge/tsc-strict-3178C6.svg)](tsconfig.json)
+
+<!-- Quality / engineering -->
+[![Tests](https://img.shields.io/badge/tests-80%20passing-43D17A.svg?logo=mocha&logoColor=white)](test/)
+[![Determinism](https://img.shields.io/badge/output-byte%20deterministic-00B894.svg)](#determinism)
+[![Coverage](https://img.shields.io/badge/coverage-IO%20%7C%20layout%20%7C%20render%20%7C%20CLI-9B59B6.svg)](test/)
+[![Style](https://img.shields.io/badge/style-explicit-1ABC9C.svg)](src/)
+[![CI](https://img.shields.io/badge/CI-local%20npm%20test-A0AEC0.svg?logo=githubactions&logoColor=white)](#tests)
+
+<!-- Reporting guidelines covered -->
+[![PRISMA 2020](https://img.shields.io/badge/PRISMA-2020-1F6FEB.svg)](https://www.bmj.com/content/372/bmj.n71)
+[![CONSORT 2010](https://img.shields.io/badge/CONSORT-2010-8957E5.svg)](https://www.bmj.com/content/340/bmj.c332)
+[![STROBE](https://img.shields.io/badge/STROBE-2007-D73A49.svg)](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(07)61602-X/fulltext)
+[![Roadmap](https://img.shields.io/badge/roadmap-MOOSE%20%7C%20ARRIVE-FF9500.svg)](#status)
+
+<!-- Output formats -->
+[![SVG](https://img.shields.io/badge/output-SVG-FFB13B.svg?logo=svg&logoColor=white)](examples/prisma-review.svg)
+[![PDF](https://img.shields.io/badge/output-PDF-EC1C24.svg?logo=adobeacrobatreader&logoColor=white)](examples/prisma-review.pdf)
+[![PNG](https://img.shields.io/badge/output-PNG-228B22.svg)](examples/prisma-review.png)
+[![drawio](https://img.shields.io/badge/output-drawio-F08705.svg)](examples/prisma-review.drawio)
+[![Mermaid](https://img.shields.io/badge/output-Mermaid-FF3670.svg?logo=mermaid&logoColor=white)](examples/prisma-review.mmd)
+
+<!-- Input formats -->
+[![YAML](https://img.shields.io/badge/input-YAML-CB171E.svg?logo=yaml&logoColor=white)](examples/prisma-review.yaml)
+[![JSON](https://img.shields.io/badge/input-JSON-000000.svg?logo=json&logoColor=white)](examples/prisma-review.json)
+[![CSV](https://img.shields.io/badge/input-CSV-217346.svg?logo=microsoftexcel&logoColor=white)](examples/prisma-review.csv)
+
+<!-- Citation / scholarship -->
+[![DOI](https://img.shields.io/badge/DOI-Zenodo%20pending-3E7BBC.svg?logo=zenodo&logoColor=white)](https://zenodo.org)
+[![ORCID](https://img.shields.io/badge/ORCID-0009--0002--3974--4528-A6CE39.svg?logo=orcid&logoColor=white)](https://orcid.org/0009-0002-3974-4528)
+[![CITATION.cff](https://img.shields.io/badge/CITATION.cff-ready-F4A261.svg)](CITATION.cff)
+[![BibTeX](https://img.shields.io/badge/cite-BibTeX-DA4F4A.svg?logo=latex&logoColor=white)](citation.bib)
+[![CSL](https://img.shields.io/badge/CSL-AMA%20%2B%20APA-7DCEA0.svg)](csl/)
+
+<!-- GitHub activity -->
+[![GitHub stars](https://img.shields.io/github/stars/htlin222/flowdoc?style=flat&logo=github&color=FFD700)](https://github.com/htlin222/flowdoc/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/htlin222/flowdoc?style=flat&logo=github&color=00B5D8)](https://github.com/htlin222/flowdoc/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/htlin222/flowdoc.svg?logo=github&color=E63946)](https://github.com/htlin222/flowdoc/issues)
+[![Last commit](https://img.shields.io/github/last-commit/htlin222/flowdoc.svg?logo=git&logoColor=white&color=4EA8DE)](https://github.com/htlin222/flowdoc/commits/main)
+[![Repo size](https://img.shields.io/github/repo-size/htlin222/flowdoc.svg?color=B5179E)](#)
+[![Code size](https://img.shields.io/github/languages/code-size/htlin222/flowdoc.svg?color=06B6D4)](#)
+
+<!-- Vibes -->
+[![Made for science](https://img.shields.io/badge/made%20for-science-9B5DE5.svg?logo=googlescholar&logoColor=white)](#why-this-exists)
+[![Reproducible](https://img.shields.io/badge/reproducible-research-00BBF9.svg)](#determinism)
+[![Open Science](https://img.shields.io/badge/open-science-FEE440.svg)](#)
+[![Built with love](https://img.shields.io/badge/built%20with-%E2%9D%A4-FF006E.svg)](#)
 
 # FlowDoc
 
@@ -22,6 +77,16 @@ FlowDoc separates three concerns:
 3. **Render layer** — SVG primary, drawio for further hand-editing, Mermaid for GitHub/Notion embeds
 
 Adding a new guideline (CONSORT, STROBE, …) means writing one preset file. The engine doesn't change.
+
+## Gallery
+
+| PRISMA 2020 | CONSORT 2010 | STROBE |
+| :---: | :---: | :---: |
+| [![PRISMA preview](examples/prisma-review.svg)](examples/prisma-review.svg) | [![CONSORT preview](examples/consort-trial.svg)](examples/consort-trial.svg) | [![STROBE preview](examples/strobe-cohort.svg)](examples/strobe-cohort.svg) |
+| Systematic review | Parallel-group RCT | Cohort participant flow |
+| `examples/prisma-review.yaml` | `examples/consort-trial.yaml` | `examples/strobe-cohort.yaml` |
+
+Each cell renders the same `LaidOutDiagram` to all five output formats — pick the one you need: `.svg` / `.pdf` / `.png` / `.drawio` / `.mmd`.
 
 ## Install
 
@@ -176,7 +241,7 @@ The PRISMA 2020 preset (`src/presets/prisma-2020/index.ts`, ~200 lines) is the r
 ## Tests
 
 ```bash
-npm test    # 51 tests across IO, validation, layout, exporters, template, CLI
+npm test    # 80 tests across IO, validation, layout, exporters, template, CLI, matrix
 ```
 
 Coverage includes: YAML/JSON/CSV roundtrips, CSV escaping, type validation, flow-accounting invariants, layout determinism, no-overlap, SVG metadata embedding, drawio XML well-formedness, Mermaid output, and end-to-end CLI smoke tests.
@@ -240,4 +305,4 @@ PDF/PNG are produced from the same `LaidOutDiagram` as the SVG renderer — they
 
 ## Status
 
-v0.1.0 — three presets (PRISMA 2020, CONSORT 2010, STROBE), three IO formats (YAML / JSON / CSV), five exporters (SVG, drawio, Mermaid, PDF, PNG), 79-test suite covering the full preset × format matrix. Roadmap: MOOSE, ARRIVE; Quarto extension; static web UI.
+v0.1.0 — three presets (PRISMA 2020, CONSORT 2010, STROBE), three IO formats (YAML / JSON / CSV), five exporters (SVG, drawio, Mermaid, PDF, PNG), 80-test suite covering the full preset × format matrix. Roadmap: MOOSE, ARRIVE; Quarto extension; static web UI.
