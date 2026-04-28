@@ -195,6 +195,14 @@ function routeEdge(
 
   // Generic L-shape: exit vertical, horizontal to target column, enter vertical.
   if (fp === "s" && tp === "n") {
+    // If the target's top edge spans the source's x (e.g. a wide colSpan
+    // box like PRISMA's "Studies included in review"), drop a straight
+    // vertical onto that edge directly above the source. This avoids
+    // snaking the L-shape's horizontal segment through any node sitting
+    // between the two rows.
+    if (a.x >= to.x && a.x <= to.x + to.width) {
+      return [a, { x: a.x, y: to.y }];
+    }
     // Different columns: go south, then west/east, then south into target.
     const midY = (a.y + b.y) / 2;
     return [a, { x: a.x, y: midY }, { x: b.x, y: midY }, b];

@@ -60,6 +60,26 @@ test("layout is deterministic (same input → same output)", () => {
   assert.deepEqual(b, a);
 });
 
+test("s/n edge into wide colSpan target drops a straight vertical", () => {
+  // PRISMA's `included` box has colSpan 3, so its top edge spans every
+  // column. The arrow from `reports_assessed` (col 0) into `included`
+  // must therefore be a single vertical segment, not an L-bend that
+  // would otherwise carve through `reports_other_excluded` at row 5.
+  const d = layout(example, preset);
+  const edge = d.edges.find((e) => e.from === "reports_assessed" && e.to === "included");
+  assert.ok(edge, "expected reports_assessed → included edge");
+  assert.equal(edge.points.length, 2, "expected exactly two points (straight drop)");
+  const [a, b] = edge.points;
+  assert.equal(a.x, b.x, "endpoints share x — vertical line");
+  assert.ok(a.y < b.y, "edge goes downward");
+
+  // And so should the right-track main flow into the same wide box.
+  const right = d.edges.find((e) => e.from === "reports_other_assessed" && e.to === "included");
+  assert.ok(right, "expected reports_other_assessed → included edge");
+  assert.equal(right.points.length, 2);
+  assert.equal(right.points[0].x, right.points[1].x);
+});
+
 test("renderSvg produces parseable XML with correct dimensions", () => {
   const d = layout(example, preset);
   const svg = renderSvg(d, { generatedAt: "2026-04-25T00:00:00Z" });

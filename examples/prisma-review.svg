@@ -9,7 +9,7 @@
 <path d="M 194 130 L 194 236" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <path d="M 194 306 L 194 324" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <path d="M 194 394 L 194 412" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
-<path d="M 194 518 L 194 571 L 494 571 L 494 624" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
+<path d="M 194 518 L 194 624" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <path d="M 324 77 L 364 77" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <path d="M 324 271 L 364 271" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <path d="M 324 359 L 364 359" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
@@ -18,7 +18,7 @@
 <path d="M 794 394 L 794 536" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <path d="M 794 394 L 794 412" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <path d="M 664 571 L 624 571" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
-<path d="M 794 606 L 794 615 L 494 615 L 494 624" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
+<path d="M 794 606 L 794 624" fill="none" stroke="#222222" stroke-width="1.3" marker-end="url(#arrow)"/>
 <g class="node" data-id="db_sources"><rect x="64" y="24" width="260" height="106" rx="2" ry="2" fill="#ffffff" stroke="#222222" stroke-width="1.2"/><text text-anchor="middle" fill="#1a1a1a" font-size="12"><tspan x="194" y="66.5">Records identified from:</tspan><tspan x="194" y="81.5">Databases (n = 1240)</tspan><tspan x="194" y="96.5">Registers (n = 82)</tspan></text></g>
 <g class="node" data-id="prescreen_removed"><rect x="364" y="24" width="260" height="106" rx="2" ry="2" fill="#fafafa" stroke="#222222" stroke-width="1.2"/><text text-anchor="middle" fill="#1a1a1a" font-size="12"><tspan x="494" y="44">Records removed before screening:</tspan><tspan x="494" y="59">Duplicate records (n = 312)</tspan><tspan x="494" y="74">Records marked as ineligible by</tspan><tspan x="494" y="89">automation tools (n = 45)</tspan><tspan x="494" y="104">Records removed for other reasons</tspan><tspan x="494" y="119">(n = 0)</tspan></text></g>
 <g class="node" data-id="other_sources"><rect x="664" y="24" width="260" height="106" rx="2" ry="2" fill="#ffffff" stroke="#222222" stroke-width="1.2"/><text text-anchor="middle" fill="#1a1a1a" font-size="12"><tspan x="794" y="59">Records identified from:</tspan><tspan x="794" y="74">Websites (n = 15)</tspan><tspan x="794" y="89">Organisations (n = 4)</tspan><tspan x="794" y="104">Citation searching (n = 8)</tspan></text></g>
