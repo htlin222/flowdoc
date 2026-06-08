@@ -43,9 +43,9 @@ function loadCase(c) {
   return layout(doc, preset);
 }
 
-test("registry exposes prisma-2020, consort-2010, strobe", () => {
+test("registry exposes prisma-2020, prisma-2020-db-only, consort-2010, strobe", () => {
   const ids = listPresets().map((p) => p.id).sort();
-  assert.deepEqual(ids, ["consort-2010", "prisma-2020", "strobe"]);
+  assert.deepEqual(ids, ["consort-2010", "prisma-2020", "prisma-2020-db-only", "strobe"]);
 });
 
 for (const c of CASES) {
